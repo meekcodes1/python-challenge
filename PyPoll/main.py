@@ -1,9 +1,11 @@
 import os
 import csv
 
+# input and output paths
 csv_path = os.path.join("PyPoll", "resources", "election_data.csv")
 out_path = os.path.join("PyPoll", "Analysis", "textfile.txt")
 
+# dictionary for candidates. counter. variable for storing winner
 cands = {}
 c = 0
 winner = ""
@@ -14,15 +16,15 @@ with open(csv_path, "r") as file:
 
     list_of_dict = list(csvreader)
 
-#   Fill new dictionary with only unique candidates. 
-#   Sum c for total vote count
+    # Fill new dictionary with only unique candidates. 
+    # Sum c for total vote count
     for row in list_of_dict:
         if row["Candidate"] not in cands:
                 cands[row["Candidate"]] = 0
         c += 1
 
-#   For each candidate, loop through all rows of file
-#   Sum if row value matches candidate
+    # For each candidate, loop through all rows of file
+    # Sum if row value matches candidate
     for cand in cands:
         for row in list_of_dict:
             if row["Candidate"] == cand:
@@ -32,6 +34,7 @@ with open(csv_path, "r") as file:
 # reference used: https://datagy.io/python-get-dictionary-key-with-max-value/
 winner = max(cands, key=cands.get)
 
+# print results in terminal
 print("Election Results")
 print("-------------------------")
 print("Total Votes: "+str(c))
