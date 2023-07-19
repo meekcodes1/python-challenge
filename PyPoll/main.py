@@ -3,7 +3,7 @@ import csv
 
 # input and output paths
 csv_path = os.path.join("PyPoll", "resources", "election_data.csv")
-out_path = os.path.join("PyPoll", "Analysis", "textfile.txt")
+out_path = os.path.join("PyPoll", "analysis", "textfile.txt")
 
 # dictionary for candidates. counter. variable for storing winner
 cands = {}

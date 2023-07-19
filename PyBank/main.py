@@ -4,7 +4,7 @@ import statistics as stat
 
 # input and output paths
 csv_path = os.path.join("PyBank", "resources", "budget_data.csv")
-out_path = os.path.join("PyBank", "Analysis", "textfile2.txt")
+out_path = os.path.join("PyBank", "analysis", "textfile2.txt")
 
 # total months. total amount. counter. list of amount change from row A to row B
 mo = 0
